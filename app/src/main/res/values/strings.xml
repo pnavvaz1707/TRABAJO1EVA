@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">TRABAJO1EVA</string>
+    <string-array name="empleadosNombre">
+        <item>Leocadio Arias Calvet</item>
+        <item>Ruperto Puig Solsona</item>
+        <item>Brunilda Albero-Solana</item>
+        <item>Manuel Ezequiel Aguirre Pareja</item>
+        <item>Ismael Cueto-Andreu</item>
+        <item>René Villar Bru</item>
+        <item>Ruth Alarcón-Prats</item>
+        <item>Simón Ferrández-Villalobos</item>
+        <item>Ofelia Morales Higueras</item>
+        <item>Isaac Gallero</item>
+        <item>Etelvina Escalona</item>
+        <item>Fanny Ibañez Flores</item>
+        <item>Valeria Sáez Diaz</item>
+        <item>Paulino Gallo Santamaría</item>
+        <item>Fernando Losada Alonso</item>
+        <item>Felisa Valdés Almazán</item>
+        <item>Plinio Peñas-Rey</item>
+        <item>Iván Pina Casal</item>
+        <item>Paco García Rodríguez</item>
+        <item>María Carmen del Peiró</item>
+        <item>Joan Juárez Roda</item>
+        <item>Julio Adadia-Santana</item>
+        <item>Perla de Barrio</item>
+        <item>José María Isidoro Berenguer Tomé</item>
+        <item>María José de Fernández</item>
+        <item>Ángeles Bas Huerta</item>
+        <item>Aurora Villalba</item>
+        <item>Marcos Navarro Ramírez</item>
+        <item>María González Guerrero</item>
+        <item>Luis Jiménez Vázquez</item>
+    </string-array>
+    <integer-array name="empleadosSueldo">
+        <item>1500</item>
+        <item>1000</item>
+        <item>1300</item>
+        <item>1200</item>
+        <item>5000</item>
+        <item>3000</item>
+        <item>3200</item>
+        <item>2200</item>
+        <item>2100</item>
+        <item>3400</item>
+        <item>4500</item>
+        <item>2100</item>
+        <item>1400</item>
+        <item>1800</item>
+        <item>1900</item>
+        <item>1700</item>
+        <item>1800</item>
+        <item>1900</item>
+        <item>3300</item>
+        <item>1400</item>
+        <item>1500</item>
+        <item>2800</item>
+        <item>2900</item>
+        <item>2600</item>
+        <item>1200</item>
+        <item>2400</item>
+        <item>2500</item>
+        <item>2300</item>
+        <item>1100</item>
+        <item>2500</item>
+    </integer-array>
+</resources>
