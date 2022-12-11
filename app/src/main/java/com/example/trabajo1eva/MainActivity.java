@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -17,61 +20,81 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ArrayList<Empleado> empleados = new ArrayList<>();
-    private TableLayout tbEmpleados;
-
+    private ListView lstEmpleados;
+    private Button btnAnadirEmpleado;
+    private EditText etNombreEmpleado;
+    private EditText etSueldoEmpleado;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_window);
 
-        String[] nombresEmpleados = getResources().getStringArray(R.array.empleadosNombre);
-        int[] sueldosEmpleados = getResources().getIntArray(R.array.empleadosSueldo);
-        tbEmpleados = findViewById(R.id.tbEmpleados);
-        for (int i = 0; i < nombresEmpleados.length; i++) {
+        lstEmpleados = findViewById(R.id.lstEmpleados);
 
-            TableRow fila = new TableRow(this);
+        Bundle bundle;
+        if ((bundle = getIntent().getExtras()) != null) {
+            empleados = bundle.getParcelableArrayList("empleadosTotal");
+            actualizarListaEmpleados();
 
-            Empleado empleado = new Empleado(nombresEmpleados[i], sueldosEmpleados[i]);
-            CheckBox checkBox = new CheckBox(this);
+        } else {
 
-            checkBox.setTag(empleado);
-            empleados.add(empleado);
+            String[] nombresEmpleados = getResources().getStringArray(R.array.empleadosNombre);
+            int[] sueldosEmpleados = getResources().getIntArray(R.array.empleadosSueldo);
 
-            TextView tvEmpleadoNombre = new TextView(this);
-            tvEmpleadoNombre.setText(empleado.getNombre());
+            for (int i = 0; i < nombresEmpleados.length; i++) {
 
-            TextView tvEmpleadoSueldo = new TextView(this);
-            tvEmpleadoSueldo.setText(String.valueOf(empleado.getSueldo()));
+                Empleado empleado = new Empleado(nombresEmpleados[i], sueldosEmpleados[i]);
 
-            fila.addView(checkBox);
-            fila.addView(tvEmpleadoNombre);
-            fila.addView(tvEmpleadoSueldo);
-
-            fila.setBackground(getDrawable(R.drawable.border));
-            fila.setPadding(10, 15, 20, 15);
-            tbEmpleados.addView(fila);
+                empleados.add(empleado);
+            }
+            actualizarListaEmpleados();
         }
+
         Button btnSortear = (Button) findViewById(R.id.btnSortear);
         btnSortear.setOnClickListener(this);
+
+        btnAnadirEmpleado = (Button) findViewById(R.id.btnAnadirEmpleado);
+        btnAnadirEmpleado.setOnClickListener(this);
+
+        etNombreEmpleado = (EditText) findViewById(R.id.et_nombre_form);
+        etSueldoEmpleado = (EditText) findViewById(R.id.et_sueldo_form);
+    }
+
+    private void actualizarListaEmpleados() {
+        Adaptador adaptador = new Adaptador(this, empleados);
+        lstEmpleados.setAdapter(adaptador);
     }
 
     @Override
     public void onClick(View view) {
-        Intent i = new Intent(this, VentanaSorteo.class);
-        Bundle bundle = new Bundle();
+        if (view.getId() == R.id.btnSortear) {
+            Intent i = new Intent(this, VentanaSorteo.class);
+            Bundle bundle = new Bundle();
 
-        ArrayList<View> checkboxs = tbEmpleados.getTouchables();
-        ArrayList<Empleado> empleadosSel = new ArrayList<>();
+            ArrayList<View> filas = lstEmpleados.getTouchables();
+            ArrayList<Empleado> empleadosSel = new ArrayList<>();
 
-        for (View checkbox : checkboxs) {
-            CheckBox c = (CheckBox) checkbox;
-            if (c.isChecked()) {
-                empleadosSel.add((Empleado) c.getTag());
+            for (View fila : filas) {
+
+                CheckBox checkBox = (CheckBox) fila.getTouchables().get(0);
+                if (checkBox.isChecked()) {
+
+                    if (!empleadosSel.contains((Empleado) checkBox.getTag())) {
+                        empleadosSel.add((Empleado) checkBox.getTag());
+                    }
+                }
+            }
+            bundle.putParcelableArrayList("empleadosTotal", empleados);
+            bundle.putParcelableArrayList("empleadosSel", empleadosSel);
+            i.putExtras(bundle);
+            startActivity(i);
+
+        } else {
+            if (!etNombreEmpleado.toString().equals("") && !etSueldoEmpleado.toString().equals("")) {
+                empleados.add(new Empleado(etNombreEmpleado.getText().toString(), Integer.parseInt(etSueldoEmpleado.getText().toString())));
+                actualizarListaEmpleados();
             }
         }
-        bundle.putParcelableArrayList("empleadosSel", empleadosSel);
-        i.putExtras(bundle);
-        startActivity(i);
     }
 }

@@ -23,6 +23,7 @@ public class VentanaSorteo extends AppCompatActivity implements View.OnClickList
     private Button btnVolver;
     private TableLayout tbSorteo;
     private ArrayList<Empleado> empleadosSel;
+    private ArrayList<Empleado> empleadosTotal;
     private ArrayList<Plaza> plazas;
 
     private Spinner spinnerEmpleados;
@@ -38,6 +39,7 @@ public class VentanaSorteo extends AppCompatActivity implements View.OnClickList
 
         Bundle bundle = getIntent().getExtras();
         empleadosSel = bundle.getParcelableArrayList("empleadosSel");
+        empleadosTotal = bundle.getParcelableArrayList("empleadosTotal");
         plazas = new ArrayList<>();
 
         spinnerEmpleados = findViewById(R.id.spinnerEmpleados);
@@ -131,7 +133,13 @@ public class VentanaSorteo extends AppCompatActivity implements View.OnClickList
 
         } else if (idBtnPulsado == R.id.btnVolver) {
             Plaza.numPlaza = 0;
-            startActivity(new Intent(this, MainActivity.class));
+            Intent i = new Intent(this, MainActivity.class);
+            Bundle bundle = new Bundle();
+
+            bundle.putParcelableArrayList("empleadosTotal",empleadosTotal);
+            i.putExtras(bundle);
+
+            startActivity(i);
 
         } else if (idBtnPulsado == R.id.btnFiltrarEmpleado) {
             Empleado empleadoSel = (Empleado) spinnerEmpleados.getSelectedItem();
