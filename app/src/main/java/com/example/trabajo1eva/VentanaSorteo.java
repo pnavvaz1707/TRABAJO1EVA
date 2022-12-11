@@ -20,7 +20,6 @@ import java.util.ArrayList;
 public class VentanaSorteo extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnEmpezarSorteo;
-    private Button btnVolver;
     private TableLayout tbSorteo;
     private ArrayList<Empleado> empleadosSel;
     private ArrayList<Empleado> empleadosTotal;
@@ -29,8 +28,6 @@ public class VentanaSorteo extends AppCompatActivity implements View.OnClickList
     private Spinner spinnerEmpleados;
     private Spinner spinnerPlazas;
     private LinearLayout layoutFiltrar;
-    private Button btnFiltrarEmpleado;
-    private Button btnFiltrarPlaza;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,15 +64,15 @@ public class VentanaSorteo extends AppCompatActivity implements View.OnClickList
         btnEmpezarSorteo = findViewById(R.id.btnEmpezarSorteo);
         btnEmpezarSorteo.setOnClickListener(this);
 
-        btnVolver = findViewById(R.id.btnVolver);
+        Button btnVolver = findViewById(R.id.btnVolver);
         btnVolver.setOnClickListener(this);
 
         layoutFiltrar = findViewById(R.id.layoutFiltrar);
 
-        btnFiltrarEmpleado = findViewById(R.id.btnFiltrarEmpleado);
+        Button btnFiltrarEmpleado = findViewById(R.id.btnFiltrarEmpleado);
         btnFiltrarEmpleado.setOnClickListener(this);
 
-        btnFiltrarPlaza = findViewById(R.id.btnFiltrarPlazas);
+        Button btnFiltrarPlaza = findViewById(R.id.btnFiltrarPlazas);
         btnFiltrarPlaza.setOnClickListener(this);
     }
 

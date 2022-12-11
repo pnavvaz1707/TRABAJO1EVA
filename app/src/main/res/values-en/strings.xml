@@ -16,4 +16,7 @@
     <string name="filtrar_plaza_txt2"> belongs to the employee </string>
     <string name="primer_item_spinner_plaza_txt">Select the parking…</string>
     <string name="primer_item_spinner_empleado_txt">Select the employee…</string>
+    <string name="nombre_form_txt">"Name: "</string>
+    <string name="sueldo_form_txt">"Salary: "</string>
+    <string name="anadir_empleado_txt">Add employee</string>
 </resources>

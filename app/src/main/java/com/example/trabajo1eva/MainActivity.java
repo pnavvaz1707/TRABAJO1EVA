@@ -7,10 +7,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.RadioButton;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +17,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private ArrayList<Empleado> empleados = new ArrayList<>();
     private ListView lstEmpleados;
-    private Button btnAnadirEmpleado;
     private EditText etNombreEmpleado;
     private EditText etSueldoEmpleado;
 
@@ -54,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnSortear = (Button) findViewById(R.id.btnSortear);
         btnSortear.setOnClickListener(this);
 
-        btnAnadirEmpleado = (Button) findViewById(R.id.btnAnadirEmpleado);
+        Button btnAnadirEmpleado = (Button) findViewById(R.id.btnAnadirEmpleado);
         btnAnadirEmpleado.setOnClickListener(this);
 
         etNombreEmpleado = (EditText) findViewById(R.id.et_nombre_form);
