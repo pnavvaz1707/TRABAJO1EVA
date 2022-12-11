@@ -1,23 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <GridLayout
-        android:id="@+id/gridEmpleados"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="30dp">
-        <TextView
-            android:text=""
+        android:orientation="vertical">
+
+        <TableLayout
+            android:id="@+id/tbEmpleados"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:text="Nombre"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp">
+
+            <TableRow
+                android:padding="10dp"
+                android:background="@drawable/border">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nombre_txt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sueldo_txt"
+                    android:textStyle="bold" />
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btnSortear"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:text="Sueldo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </GridLayout>
-</LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:text="@string/sortear_txt" />
+    </LinearLayout>
+</ScrollView>

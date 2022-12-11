@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TRABAJO1EVA</string>
+    <string name="nombre_txt">Name</string>
+    <string name="sortear_txt">Raffle</string>
+    <string name="sueldo_txt">Salary</string>
+    <string name="empezar_sorteo_txt">Start raffle</string>
+    <string name="volver_txt">Back</string>
+    <string name="plaza_txt">Parking</string>
+    <string name="filtrar_plaza_txt">Filter by parking</string>
+    <string name="filtrar_empleado_txt">Filter by employee</string>
+    <string name="filtrar_empleado_txt1">The employee </string>
+    <string name="filtrar_empleado_txt2"> has the parking </string>
+    <string name="filtrar_empleado_txt3"> does not has parking</string>
+    <string name="filtrar_plaza_txt1">The parking </string>
+    <string name="filtrar_plaza_txt2"> belongs to the employee </string>
+    <string name="primer_item_spinner_plaza_txt">Select the parking…</string>
+    <string name="primer_item_spinner_empleado_txt">Select the employee…</string>
+</resources>

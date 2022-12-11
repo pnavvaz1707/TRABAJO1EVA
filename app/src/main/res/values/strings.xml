@@ -1,5 +1,21 @@
 <resources>
     <string name="app_name">TRABAJO1EVA</string>
+    <string name="sortear_txt">Sortear</string>
+    <string name="nombre_txt">Nombre</string>
+    <string name="sueldo_txt">Sueldo</string>
+    <string name="empezar_sorteo_txt">Empezar sorteo</string>
+    <string name="volver_txt">Volver</string>
+    <string name="plaza_txt">Plaza</string>
+    <string name="filtrar_plaza_txt">Filtrar por plaza</string>
+    <string name="filtrar_empleado_txt">Filtrar por empleado</string>
+    <string name="filtrar_empleado_txt1">El empleado </string>
+    <string name="filtrar_empleado_txt2"> tiene la plaza </string>
+    <string name="filtrar_empleado_txt3"> no tiene plaza de aparcamiento</string>
+    <string name="filtrar_plaza_txt1">La plaza </string>
+    <string name="filtrar_plaza_txt2"> pertenece al empleado </string>
+    <string name="primer_item_spinner" translatable="false">…</string>
+    <string name="primer_item_spinner_plaza_txt">Selecciona una plaza…</string>
+    <string name="primer_item_spinner_empleado_txt">Selecciona empleado…</string>
     <string-array name="empleadosNombre">
         <item>Leocadio Arias Calvet</item>
         <item>Ruperto Puig Solsona</item>
